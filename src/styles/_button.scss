@@ -1,0 +1,42 @@
+.primary-button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: $cream;
+  display: flex;
+  font: bold 0.8rem $nanum;
+  justify-content: center;
+  height: 40px;
+  margin: 10px;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 3;
+  width: 150px;
+
+  &:after {
+    background: url(../assets/right.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: auto 100%;
+    top: 0;
+    content: "";
+    right: 0;
+    width: 30%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &:before {
+    background: url(../assets/left.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: auto 100%;
+    top: 0;
+    content: "";
+    left: 0;
+    width: 80%;
+    height: 100%;
+    z-index: -1;
+  }
+}

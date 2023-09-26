@@ -1,0 +1,118 @@
+@import "../../styles/index.scss";
+$lines: "data:image/svg+xml;charset=utf-8,%3Csvg width='940' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_675_17860)' stroke='%23E1E0E0' stroke-width='.75' stroke-miterlimit='10'%3E%3Cpath d='M457.05 11.996l1.816-.904c4.006-1.986 7.293-5.087 9.43-8.898l1.2-2.142M469.496 23.988l-1.249-2.263c-2.159-3.833-5.479-6.947-9.522-8.93l-1.666-.8M481.992 11.996l-1.016.448c-4.858 2.137-8.758 5.872-10.997 10.528l-.483 1.016M469.496.052l.342.735c2.141 4.577 5.884 8.29 10.579 10.497l1.575.712'/%3E%3C/g%3E%3Cpath d='M458 12.004H0M940 12.004H482' stroke='%23E1E0E0'/%3E%3Cdefs%3E%3CclipPath id='clip0_675_17860'%3E%3Cpath fill='%23fff' transform='translate(457 .004)' d='M0 0h25v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E";
+
+.characters {
+  height: 100%;
+  &:before {
+    background: url($lines) no-repeat;
+    background-position: center;
+    content: "";
+    height: 30px;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+  }
+  .slider-containier {
+    height: 100%;
+    width: 100%;
+
+    .wrapper {
+      @include column-center;
+      box-sizing: border-box;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      .slider-wrapper {
+        height: 415px;
+        position: absolute;
+        overflow: hidden;
+        width: 250px;
+        &:hover .slider-info {
+          bottom: 0;
+        }
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+        .slider-info {
+          @include column-center;
+          position: absolute;
+          bottom: -185px;
+          color: white;
+          transition: 0.3s ease-in;
+        }
+      }
+
+      .slider-button-container {
+        @include row-between;
+        z-index: 2;
+        width: 100%;
+
+        button {
+          @include column-center;
+          background-color: $brown;
+          cursor: pointer;
+          height: 45px;
+          width: 45px;
+          &:nth-child(1) {
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+            img {
+              margin-right: 7px;
+              transform: rotate(180deg);
+            }
+          }
+          &:nth-child(2) {
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            img {
+              margin-left: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.desktop-item {
+  height: 450px;
+  width: 280px;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  &:hover div {
+    bottom: 0;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  div {
+    @include column-between;
+    background: radial-gradient(
+        ellipse at bottom,
+        #0b0b0b 0,
+        rgba(11, 11, 11, 0) 72%,
+        rgba(11, 11, 11, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at bottom,
+        rgba(11, 11, 11, 0.5) 0,
+        rgba(11, 11, 11, 0) 70%,
+        rgba(11, 11, 11, 0) 100%
+      );
+    color: $cream;
+    height: 295px;
+    position: absolute;
+    transition: 0.4s ease-out;
+    bottom: -235px;
+  }
+}

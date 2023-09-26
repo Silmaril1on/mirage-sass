@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Quicksand:wght@300;500&display=swap");
+
+// font styles
+$nanum: nanum myeongjo;
+$quicksand: quicksand;
+
+// colors
+$dark-blue: #142b3d;
+$cream: #e1e0e0;
+$brown: #b65f38;
+$light-grey: #ccc;
+$black: #000;
+$white: #fff;
+$transparent: transparent;
+
+//linear-radial backgrounds
+$elipse-black: radial-gradient(
+    ellipse at bottom,
+    #0b0b0b 0,
+    rgba(11, 11, 11, 0) 72%,
+    rgba(11, 11, 11, 0) 100%
+  ),
+  radial-gradient(
+    ellipse at bottom,
+    rgba(11, 11, 11, 0.5) 0,
+    rgba(11, 11, 11, 0) 70%,
+    rgba(11, 11, 11, 0) 100%
+  );
+
+$colors: (
+  "white": $white,
+  "black": $black,
+  "cream": $cream,
+  "brown": $brown,
+  "l-grey": $light-grey,
+  "d-blue": $dark-blue,
+  "transparent": transparent,
+);
+
+// paddings & margins
+$base-padding: 5px;
+$base-margin: 5px;
+
+// border-radius
+$base-border-radius: 20px;
+
+// font-size
+$base-font-size: 1.2rem;
+$small-font-size: 0.7rem;
+$large-font-size: 2rem;
+$xl-font-size: 3rem;
+$xxl-font-size: 4rem;

@@ -1,0 +1,34 @@
+@mixin mirage-border() {
+  position: relative;
+  height: auto;
+  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1360 615' preserveAspectRatio='none'%3E%3Cpath d='M1335.2 0H24.8c0 13.7-11.1 24.8-24.8 24.8V590.2c13.7 0 24.8 11.1 24.8 24.8h1310.4c0-13.7 11.1-24.8 24.8-24.8V24.8c-13.7 0-24.8-11.1-24.8-24.8z'/%3E%3C/svg%3E");
+  width: 350px;
+
+  &:before {
+    content: "";
+    border-image-source: url("../assets/image-border.png");
+    border-image-slice: 40 40 40 40;
+    border-image-width: 55px 40px 55px 40px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-style: solid;
+    bottom: 5px;
+    height: calc(100% - 10px);
+    left: 0;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: calc(100% - 10px);
+  }
+}
+
+@mixin image-border() {
+  position: relative;
+  height: auto;
+  background: $cream;
+  border-image-source: url("../assets/grey-border.png");
+  border-image-slice: 40 40 40 40;
+  border-image-width: 40px 40px 40px 40px;
+  border-image-outset: 40px 40px 40px 40px;
+  border-image-repeat: stretch stretch;
+}

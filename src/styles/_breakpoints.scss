@@ -1,0 +1,92 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 1080px,
+  "xl": 1250px,
+);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+.res-font {
+  @include xs {
+    font-size: 2.3rem;
+  }
+  @include sm {
+    font-size: 2.9rem;
+  }
+  @include md {
+    font-size: 3.6rem;
+  }
+  @include lg {
+    font-size: 4.1rem;
+  }
+  @include xl {
+    font-size: 4.9rem;
+  }
+}
+
+.mobile-size {
+  @include xs {
+    display: flex;
+  }
+  @include sm {
+    display: flex;
+  }
+  @include md {
+    display: flex;
+  }
+  @include lg {
+    display: none;
+  }
+  @include xl {
+    display: none;
+  }
+}
+.desktop-size {
+  @include xs {
+    display: none;
+  }
+  @include sm {
+    display: none;
+  }
+  @include md {
+    display: none;
+  }
+  @include lg {
+    display: flex;
+  }
+  @include xl {
+    display: flex;
+  }
+}

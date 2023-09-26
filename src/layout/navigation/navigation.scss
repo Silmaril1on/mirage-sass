@@ -1,0 +1,205 @@
+@import "../../styles/variables";
+
+@mixin container-row() {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@mixin container-column() {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container {
+  background-color: $dark-blue;
+  color: $white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 22;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+  }
+
+  .logo-container {
+    @include container-row;
+    width: 100px;
+
+    svg {
+      cursor: pointer;
+      height: 25px;
+      width: 25px;
+    }
+
+    img {
+      height: auto;
+      width: 40px;
+    }
+  }
+
+  .pre-order-container {
+    @include container-column;
+    width: auto;
+  }
+
+  .desktop-size {
+    .submenu {
+      @include container-column;
+      border-bottom: 5px solid $brown;
+      background-color: $dark-blue;
+      position: absolute;
+      top: 55px;
+      left: -20px;
+      z-index: 2;
+      width: 200px;
+
+      h1 {
+        color: $cream;
+        transition: 0.3s;
+        &:hover {
+          color: $brown;
+        }
+      }
+    }
+
+    div {
+      &:nth-child(2) {
+        ul {
+          img {
+            transform: rotate(90deg);
+            height: 25px;
+            margin-left: 15px;
+            width: auto;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        h3 {
+          img {
+            transition: 0.4s;
+          }
+          &:hover img {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    .pre-order-container {
+      .primary-button {
+        transform: scale(1.2);
+        @media screen and (min-width: 1300px) {
+          transform: scale(1.6);
+        }
+      }
+      h5 {
+        padding-top: 8px;
+      }
+    }
+
+    .nav-links {
+      color: $cream;
+      cursor: pointer;
+      font: normal 1rem $quicksand;
+      margin: 4px;
+      position: relative;
+      text-transform: uppercase;
+      transition: 0.3s;
+      @media screen and (min-width: 1250px) {
+        font-size: 1.3rem;
+        padding: 0 10px 0 10px;
+      }
+
+      &:hover {
+        color: $brown;
+      }
+
+      &:before {
+        bottom: -37px;
+        background: url("../../assets/ac-bk-lines.png") 50% 100% no-repeat,
+          url("../../assets/ac-bk.png") 50% calc(100% - 5px) no-repeat;
+        background-size: 130px auto;
+        content: "";
+        height: 50px;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+        transition: 0.4s;
+        width: 100%;
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:after {
+        bottom: -38px;
+        background-color: $brown;
+        content: "";
+        height: 6px;
+        position: absolute;
+        left: 50%;
+        opacity: 0;
+        transition: 0.4s;
+        width: 1%;
+      }
+      &:hover:after {
+        opacity: 1;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .aside-menu {
+    @include container-column;
+    background-color: $black;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 107px;
+    width: 100%;
+    box-sizing: border-box;
+
+    div {
+      width: 100%;
+      .aside {
+        background: url("../../assets/linkBk.jpg");
+      }
+      ul {
+        overflow: hidden;
+        h3 {
+          @include container-row;
+          justify-content: space-between;
+          img {
+            transform: rotate(90deg);
+            height: 25px;
+            margin-left: 15px;
+            width: auto;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        @include container-column;
+        width: auto;
+
+        h5 {
+          padding: 10px;
+        }
+        .primary-button {
+          transform: scale(1.6);
+        }
+      }
+    }
+  }
+}

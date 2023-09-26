@@ -1,0 +1,63 @@
+@import "../../styles//index.scss";
+
+.head-container {
+  background: url("../../assets/mobile-wp.jpg");
+  background-position: 90% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+  margin-top: 110px;
+  width: 100%;
+  @media screen and (min-width: 1100px) {
+    background: url("../../assets/desktop-wp-min.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  section {
+    height: 100%;
+    @media screen and (min-width: 1100px) {
+      justify-content: center;
+      width: 65%;
+    }
+
+    h5 {
+      cursor: pointer;
+
+      &:hover img {
+        transition: 0.3s;
+        transform: translateX(5px);
+      }
+    }
+
+    .video-container {
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+
+      .primary-button {
+        position: absolute;
+        bottom: -14px;
+      }
+
+      .video-component {
+        @include mirage-border;
+        position: relative;
+        min-width: 320px;
+        width: 70%;
+        &:hover video {
+          filter: brightness(0.5);
+          transform: scale(1.2);
+        }
+
+        video {
+          cursor: pointer;
+          height: 100%;
+          object-fit: cover;
+          transition: 0.3s;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
