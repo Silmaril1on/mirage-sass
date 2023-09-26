@@ -39,9 +39,10 @@ $lines: "data:image/svg+xml;charset=utf-8,%3Csvg width='940' height='25' fill='n
           width: 100%;
         }
         .slider-info {
-          @include column-center;
+          bottom: -250px;
+          @include column-between;
           position: absolute;
-          bottom: -185px;
+          height: 300px;
           color: white;
           transition: 0.3s ease-in;
         }

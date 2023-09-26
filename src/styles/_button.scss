@@ -40,3 +40,30 @@
     z-index: -1;
   }
 }
+
+.toggle-button {
+  align-items: center;
+  border: none;
+  background-color: $brown;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  &:nth-child(1) {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    img {
+      margin-right: 7px;
+      transform: rotate(180deg);
+    }
+  }
+  &:nth-child(2) {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    img {
+      margin-left: 7px;
+    }
+  }
+}

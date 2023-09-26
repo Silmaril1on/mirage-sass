@@ -314,6 +314,15 @@ $utilities: (
       "xl": 5px,
     ),
   ),
+  "z-index": (
+    "prefix": "z",
+    "values": (
+      "1": 1,
+      "3": 3,
+      "5": 5,
+      "10": 10,
+    ),
+  ),
 );
 
 // generate utilitiy classes

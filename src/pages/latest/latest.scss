@@ -1,0 +1,85 @@
+@import "../../styles/index.scss";
+$lines: "data:image/svg+xml;charset=utf-8,%3Csvg width='940' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_675_17860)' stroke='%23E1E0E0' stroke-width='.75' stroke-miterlimit='10'%3E%3Cpath d='M457.05 11.996l1.816-.904c4.006-1.986 7.293-5.087 9.43-8.898l1.2-2.142M469.496 23.988l-1.249-2.263c-2.159-3.833-5.479-6.947-9.522-8.93l-1.666-.8M481.992 11.996l-1.016.448c-4.858 2.137-8.758 5.872-10.997 10.528l-.483 1.016M469.496.052l.342.735c2.141 4.577 5.884 8.29 10.579 10.497l1.575.712'/%3E%3C/g%3E%3Cpath d='M458 12.004H0M940 12.004H482' stroke='%23E1E0E0'/%3E%3Cdefs%3E%3CclipPath id='clip0_675_17860'%3E%3Cpath fill='%23fff' transform='translate(457 .004)' d='M0 0h25v24H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E";
+
+.latest-container {
+  position: relative;
+  margin-top: 25%;
+  padding-bottom: 7%;
+  height: 100%;
+  width: 100%;
+
+  &:before {
+    content: "";
+    background: url($lines) no-repeat;
+    background-position: center;
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    left: 0;
+    height: 30px;
+  }
+
+  .video-player {
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+
+    video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .latest-slider {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    @media screen and (min-width: 1000px) {
+      display: none;
+    }
+
+    .wrapper {
+      @include column-center;
+      height: 500px;
+      width: auto;
+      position: relative;
+      overflow: hidden;
+
+      .latest-card {
+        @include column-center;
+        position: absolute;
+        color: $cream;
+        width: 320px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .button-container {
+        @include row-between;
+        width: 100%;
+        position: absolute;
+        bottom: 120px;
+      }
+    }
+  }
+
+  .desktop-card {
+    @include column-between;
+    color: $cream;
+    margin: 15px;
+    height: 100%;
+    width: 25%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .bottom-header {
+    width: 30%;
+    z-index: 3;
+  }
+}
