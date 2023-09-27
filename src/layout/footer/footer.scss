@@ -1,0 +1,101 @@
+@import "../../styles/index.scss";
+
+.footer-container {
+  @include column-center;
+
+  .wrapper {
+    @include column-center;
+    width: 100%;
+    @media screen and (min-width: 1000px) {
+      flex-direction: row-reverse;
+      height: 878px;
+    }
+
+    .ubisoft-container {
+      background-color: #202020;
+      @include column-center;
+      height: 100%;
+      width: 100%;
+      @media screen and (min-width: 1000px) {
+        width: 25%;
+      }
+
+      h1,
+      h2 {
+        color: $cream;
+        cursor: pointer;
+        font-family: $quicksand;
+        font-size: 1.5rem;
+        transition: 0.2s ease-in;
+        text-transform: uppercase;
+        &:hover {
+          color: white;
+        }
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .mirage-container {
+      @include column-center;
+      background-color: $blue;
+      width: 100%;
+      @media screen and (min-width: 1000px) {
+        width: 75%;
+      }
+
+      section {
+        @media screen and (min-width: 1000px) {
+          flex-direction: row;
+          width: 100%;
+        }
+        h1 {
+          &:hover {
+            cursor: pointer;
+            transition: 0.3s;
+            color: $light-grey;
+          }
+        }
+      }
+
+      .language-container {
+        @include row-between;
+        color: $cream;
+        width: 150px;
+
+        svg {
+          height: 30px;
+          width: 30px;
+          color: $cream;
+        }
+      }
+    }
+  }
+
+  .socials {
+    @include column-center;
+    background-color: $black;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+    &:hover svg {
+      filter: brightness(0.4);
+    }
+    svg {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: $cream;
+      padding: 5px;
+      color: $black;
+      transition: 0.3s;
+      margin: 5px;
+      &:hover {
+        filter: brightness(1);
+      }
+    }
+  }
+}
