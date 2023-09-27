@@ -163,11 +163,10 @@
   .aside-menu {
     @include container-column;
     background-color: $black;
-    height: 100vh;
     position: absolute;
     left: 0;
     top: 106px;
-    overflow: auto;
+    height: auto;
     width: 100%;
     box-sizing: border-box;
 
@@ -177,7 +176,6 @@
         background: url("../../assets/linkBk.jpg");
       }
       ul {
-        overflow: hidden;
         h3 {
           @include container-row;
           justify-content: space-between;
