@@ -24,12 +24,13 @@ $logoback: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/200
   }
   &::after {
     background: url($logoback) no-repeat;
+    background-position: center;
     content: "";
     position: absolute;
-    width: 100px;
+    width: 100%;
     top: -25px;
     height: 50px;
-    left: 49%;
+    left: 0;
   }
 
   .content-section {

@@ -163,10 +163,11 @@
   .aside-menu {
     @include container-column;
     background-color: $black;
-    height: auto;
+    height: 100vh;
     position: absolute;
     left: 0;
-    top: 107px;
+    top: 106px;
+    overflow: auto;
     width: 100%;
     box-sizing: border-box;
 

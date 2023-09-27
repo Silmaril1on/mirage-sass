@@ -55,6 +55,7 @@ $lines: "data:image/svg+xml;charset=utf-8,%3Csvg width='940' height='25' fill='n
 
         button {
           @include column-center;
+          border: none;
           background-color: $brown;
           cursor: pointer;
           height: 45px;
